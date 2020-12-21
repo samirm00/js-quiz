@@ -8,26 +8,23 @@ A collection of user stories you can choose from. Stories inside of each priorit
 
 > these are necessary for basic usability
 
-- [ ] A user can see all questions
-  - _acceptance criteria ..._
-- [ ] A user can select an answer for each question
-  - _acceptance criteria ..._
-- [ ] A user can know which questions they got correct and incorrect
-  - _acceptance criteria ..._
-- [ ] A user can see the correct answer for questions
-  - _acceptance criteria ..._
-- [ ] A user can see their score at the end of the quiz
-  - _acceptance criteria ..._
+
+- [x] A user can select an answer for each question.
+  
+- [x] A user can know which questions they got correct and incorrect at the end of the quiz. 
+  
+- [x] A user can see their score at the end of the quiz.
+  
 
 ## Should-Haves
 
 > these will complete the user experience, but are not necessary
 
-- [ ] A user can see one question at a time, stepping through the quiz (may require refactoring)
+- [x] A user can see one question at a time, stepping through the quiz (may require refactoring)
   - _acceptance criteria ..._
 - [ ] A user can "cheat" to see the correct answer, this forfeits the question
   - _acceptance criteria ..._
-- [ ] A user has access to resources for further study on each question
+- [x] A user has access to resources for further study on each question
   - _acceptance criteria ..._
 - [ ] A user can see their score update in real-time as they select answers
   - _acceptance criteria ..._
