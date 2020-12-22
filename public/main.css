@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+
+* ,*::before , *::after{
+    box-sizing: border-box;
+    font-family:'Langar', cursive;;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(128, 159, 167) ;
+
+}
+
+.container{
+    width: 900px;
+    max-width: 90%;
+    background-color:rgb(48, 219, 219);
+    padding: 10px;
+    box-shadow: rgb(41, 59, 189);
+    border-radius: 10px;
+}
+
+:root{
+    --color-normal:205;
+    --color-correct:112;
+    --color-wrong: 356 ;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2 ,420px);
+    gap: 12px;
+    margin: 30px 10px;
+
+}
+
+.button{
+    --hue: var(--color-normal);
+    border: 1px solid hsl(var(--hue) , 100% , 20%);
+    background-color: hsl(var(--hue) , 100% , 20%);
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+
+}
+.button:hover{
+    border: 2px solid white;
+}
+
+.button.correct{
+    --hue : var(--color-correct);
+}
+
+.button.wrong{
+    --hue : var(--color-wrong);
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.start-button{
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(190, 216, 45);
+    border: 2px solid rgb(129, 127, 96);
+}
+
+.next-button{
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left:80px;
+    border: 2px solid rgb(129, 127, 96);
+}
+
+.hidden{
+    display: none;
+}

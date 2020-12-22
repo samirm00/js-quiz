@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf8" />
-    <title>your project name</title>
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS Quiz</title>
+    <link rel="stylesheet" href="./public/main.css">
     <link href="./public/style.css" rel="stylesheet" />
+    
   </head>
 
   <body>
-    <div id="user-interface" class="centered">
-      <textarea id="input"></textarea>
-      <br />
-      separator: <input id="separator-input" />
-      <br />
-      <div id="output" class="scrollable"></div>
+    <!-- container includes the questions , answer buttons ( question-container) and the next and start buttons(controls)-->
+    <div class="container">
+      <!--container includes the questions , answer buttons ( question-container), hidden by default -->
+      <div id="questions-container" class="hidden">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="buttons">
+          <button class="button">Answer 1</button>
+          <button class="button">Answer 2</button>
+          <button class="button">Answer 3</button>
+          <button class="button">Answer 4</button>
+        </div>
+
+      </div>
+      <!-- container includes the next and start buttons(controls)-->
+      <div class="controls">
+        <button  id="start-btn" class="start-button">Start</button>
+        <button  id="next-btn" class="next-button hidden">Next</button>
+
+      </div>
+
     </div>
 
     <!-- initialize your application -->
