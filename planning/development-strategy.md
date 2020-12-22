@@ -2,7 +2,7 @@
 
 # JavaScript Quiz
 
-This is a simple website in which users can check their JS knowledge by taking a quick quiz.
+This is a simple website in which user can check his/her JS knowledge by taking a quick quiz.
 
 ---
 
