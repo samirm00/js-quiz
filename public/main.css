@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 
 
-* ,*::before , *::after{
+ html{
     box-sizing: border-box;
     font-family:'Langar', cursive;;
 }
@@ -11,20 +11,29 @@ body {
     margin: 0;
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
-    background-color:rgb(128, 159, 167) ;
+    background-image: url(""https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat ;
+    
 
 }
 
 .container{
     width: 900px;
     max-width: 90%;
-    background-color:rgb(48, 219, 219);
+    background-color:rgb(111, 117, 117);
     padding: 10px;
-    box-shadow: rgb(41, 59, 189);
+    box-shadow: 5px 5px 5px 5px ;
     border-radius: 10px;
+}
+.question{
+    text-align: center;
+    margin: 30px 30px;
+    font-size: 20px;
 }
 
 :root{
@@ -42,9 +51,9 @@ body {
 
 .button{
     --hue: var(--color-normal);
-    border: 1px solid hsl(var(--hue) , 100% , 20%);
+    border: 1px solid hsl(var(--hue) , 90% , 20%);
     background-color: hsl(var(--hue) , 100% , 20%);
-    padding: 5px 10px;
+    padding: 10px 10px;
     color: white;
     border-radius: 10px;
 
@@ -69,19 +78,29 @@ body {
 }
 
 .start-button{
-    padding: 5px;
+    padding: 10px 50px;
+    margin: 20px;
     font-size: 18px;
     font-weight: bold;
-    background-color: rgb(190, 216, 45);
+    border-radius: 10px;
+    background-color: rgb(44, 150, 236);
     border: 2px solid rgb(129, 127, 96);
 }
 
 .next-button{
-    padding: 5px;
+    padding: 10px  50px;
+    margin: 20px;
     font-size: 18px;
     font-weight: bold;
     margin-left:80px;
+    border-radius: 10px;
+    background-color: rgb(44, 150, 236);
     border: 2px solid rgb(129, 127, 96);
+}
+
+.start-button:hover , .next-button:hover{
+    border: 2px solid white;
+
 }
 
 .hidden{
