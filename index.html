@@ -12,21 +12,22 @@
   <body>
     <!-- container includes the questions , answer buttons ( question-container) and the next and start buttons(controls)-->
     <div class="container">
+      <h1>JavaScript Quiz</h1>
       <!--container includes the questions , answer buttons ( question-container), hidden by default -->
-      <div id="questions-container" class="question hidden ">
-        <div id="question">Question</div>
-        <div id="answer-buttons" class="buttons">
-          <button class="button">Answer 1</button>
-          <button class="button">Answer 2</button>
-          <button class="button">Answer 3</button>
-          <button class="button">Answer 4</button>
+      <div id="question-container" class=" hide ">
+        <div id="question" class="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
         </div>
 
       </div>
       <!-- container includes the next and start buttons(controls)-->
       <div class="controls">
-        <button  id="start-btn" class="start-button">Start</button>
-        <button  id="next-btn" class="next-button hidden ">Next</button>
+        <button  id="start-btn" class="start-btn btn">Start</button>
+        <button  id="next-btn" class="next-btn btn hide ">Next</button>
 
       </div>
 
@@ -34,6 +35,7 @@
 
     <!-- initialize your application -->
     <script type="module" src="./src/init/index.js"></script>
+    
 
     <!-- load the review buttons for your live deployment  -->
     <script type="module" src="./lib/review-buttons.js"></script>
