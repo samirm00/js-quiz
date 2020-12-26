@@ -13,6 +13,7 @@
 }
 
 body {
+<<<<<<< HEAD
   --hue: var(--hue-neutral);
   padding: 0;
   margin: 0;
@@ -23,6 +24,20 @@ body {
   align-items: center;
   background-color: hsl(var(--hue), 100%, 20%);
 }
+=======
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat ;
+    
+>>>>>>> c592f864781a06bb4c8fda8e9face6a1aa03a75a
 
 body.correct {
   --hue: var(--hue-correct);
