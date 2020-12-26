@@ -1,6 +1,6 @@
 'use strict';
 
-import { logger } from '/lib/logger.js';
+//import { logger } from '/lib/logger.js';
 
 import { data , questions} from '../data.js';
 
@@ -28,12 +28,7 @@ export function startGame (){
   
 
 
- logger.add({
-  handler: 'starGame',
-  data,
-  questions,
-  
-});
+
 };
 
   
