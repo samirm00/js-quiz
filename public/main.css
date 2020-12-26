@@ -1,108 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+*,*::after,*::before{
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  color:rgb(13, 15, 15);
+}
 
-
- html{
-    box-sizing: border-box;
-    font-family:'Langar', cursive;;
+:root {
+  --hue-neutral: 207;
+  --hue-wrong: 0;
+  --hue-correct: 145;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-    background-image: url("https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") ;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat ;
-    
 
+  --hue: var(--hue-neutral);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
 }
 
-.container{
-    width: 900px;
-    max-width: 90%;
-    background-color:rgb(111, 117, 117);
-    padding: 10px;
-    box-shadow: 5px 5px 5px 5px ;
-    border-radius: 10px;
+
+body.correct {
+  --hue: var(--hue-correct);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+}
+h1{
+  text-align: left;
+  font-size:14px;
+  color: rgb(44, 209, 238)
+  
+}
+
+.container {
+  width: 900px;
+  max-width: 90%;
+  background-color:rgb(89, 102, 99);
+  padding: 10px;
+  box-shadow: 5px 5px 5px 5px ;
+  border-radius: 10px;
 }
 .question{
-    text-align: center;
-    margin: 30px 30px;
-    font-size: 20px;
+  text-align: center
+   
+}
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 420px);
+  gap: 12px;
+  margin: 30px 10px
+  
 }
 
-:root{
-    --color-normal:205;
-    --color-correct:112;
-    --color-wrong: 356 ;
-}
-.buttons{
-    display: grid;
-    grid-template-columns: repeat(2 ,420px);
-    gap: 12px;
-    margin: 30px 10px;
-
-}
-
-.button{
-    --hue: var(--color-normal);
-    border: 1px solid hsl(var(--hue) , 90% , 20%);
-    background-color: hsl(var(--hue) , 100% , 20%);
-    padding: 10px 10px;
-    color: white;
-    border-radius: 10px;
-
-}
-.button:hover{
-    border: 2px solid white;
-}
-
-.button.correct{
-    --hue : var(--color-correct);
-}
-
-.button.wrong{
-    --hue : var(--color-wrong);
-}
-
-.controls{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
 
 }
 
-.start-button{
-    padding: 10px 50px;
-    margin: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: rgb(44, 150, 236);
-    border: 2px solid rgb(129, 127, 96);
+.btn:hover {
+  border: 2px solid white;
 }
 
-.next-button{
-    padding: 10px  50px;
-    margin: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left:80px;
-    border-radius: 10px;
-    background-color: rgb(44, 150, 236);
-    border: 2px solid rgb(129, 127, 96);
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: black;
 }
 
-.start-button:hover , .next-button:hover{
-    border: 2px solid white;
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 30px
 
 }
 
-.hidden{
-    display: none;
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
 }
