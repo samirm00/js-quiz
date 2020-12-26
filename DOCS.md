@@ -8,20 +8,12 @@
 
 - [handlers](#handlers)
   - [startGame.js](#srchandlersstartGamejs)
-  - [setNextQuestion.js](#srchandlerssetNextQuestionjs)
 - [init](#init)
   - [index.js](#srcinitindexjs)
 - [listeners](#listeners)
   - [startGameClick.js](#srclistenersstartGameClickjs)
-  - [setNextQuestionClick.js](#srclistenerssetNextQuestionClickjs)
 - [logic](#logic)
-  
 - [views](#views)
-  - [clearStatusClass.js](#srcviewsclearStatusClassjs)
-  - [resetState.js](#srcviewsresetStatejs)
-  - [setStatusClass.js](#srcviewssetStatusClassjs)
-
-
 - [data.js](#srcdatajs)
 
 <!-- END TOC -->
@@ -46,27 +38,14 @@ Handler function define user interactions. They will:
 
 <a name="startGame"></a>
 
-## artifyHandler
+## startGame()
 
-creates a mirror-image rendering of the user input and displays the growing artwork
+## a higher order function (handler)
 
-| Param | Type               | Description                                                |
-| ----- | ------------------ | ---------------------------------------------------------- |
-| event | <code>click</code> | triggered whenever a user click on the start button        |
-
----
-
-### [./src/handlers/setNextQuestion.js](./src/handlers/setNextQuestion.js?study)
-
-<a name="setNextQuestion"></a>
-
-## changeSeparatorHandler
-
-changes the program's separator value
-
-| Param | Type               | Description                                                 |
-| ----- | ------------------ | ----------------------------------------------------------- |
-| event | <code>click</code> | triggered whenever a user click on the next question        |
+1- hide the start button
+2- shuffle the question so they appear in a different order
+3- show the question
+call {setNextQuestion()}
 
 [TOP](#DOCS)
 
@@ -96,23 +75,12 @@ You can use the same handler in many different listeners, or add more than one l
 
 ### [./src/listeners/startGameClick.js](./src/listeners/startGameClick.js?study)
 
-<a name="change startGameClick
-calls handler that start the game"></a>
+<a name="startGameClick call the handler {StartGame _new } to start the quiz 
+a"></a>
 
-## startGameClick
+## startGameClick call the handler {StartGame () } to start the quiz
 
-calls handler that start the game
-
----
-
-### [./src/listeners/setNextQuestionClick.js](./src/listeners/setNextQuestionClick.js?study)
-
-<a name="setNextQuestionClick
-calls the reverseHandler when a user click on the next button"></a>
-
-## setNextQuestionClick
-
-calls the the handler when the user click on the next button
+a
 
 [TOP](#DOCS)
 
@@ -132,9 +100,11 @@ Logic functions will _never_ ...
 - use prompt/alert/confirm
 - use data that is not passed as a parameter
 
+[TOP](#DOCS)
+
 ---
 
-
+---
 
 # Views
 
@@ -150,52 +120,6 @@ VIEW functions will _never_ ...
 - use prompt/alert/confirm
 - use data that is not passed as a parameter
 
----
-
-
-### [./src/views/clearStatusClass.js](./src/views/clearStatusClass.js?study)
-
-<a name="clearStatusClass"></a>
-
-## clear the element class 
-
-remove class form an element 
-
-**Returns**: <code>HTMLPreElement</code> - a PRE element with the rendered string content
-
-| Param     | Type                              | Description                                                                       |
-| --------- | --------------------------------- | --------------------------------------------------------------------------------- |
-| element   | remove classes                    | remove class correct or class wrong from elements                                 |
-
-
-### [./src/views/setStatusClass.js](./src/views/setStatusClass.js?study)
-
-<a name="setStatusClass "></a>
-
-## add class 
-
-add class correct to the element if it is correct else add class wrong 
-
-**Returns**: 
-
-| Param     | Type                              | Description                                                                       |
-| --------- | --------------------------------- | --------------------------------------------------------------------------------- |
-| element   | button                            | the selected element                                                              |
-| correct   | class                             | add class correct if the selected element is correct or add class wrong           |
-
-
-### [./src/views/resetState.js](./src/views/resetState.js?study)
-
-<a name="resetState "></a>
-
-## remove class or element child 
-
-remove class from the body and remove the answer child 
-
-**Returns**: 
-
-
-
 [TOP](#DOCS)
 
 ---
@@ -208,39 +132,36 @@ remove class from the body and remove the answer child
 
 <dl>
 <dt><a href="#data">data</a></dt>
-<dd><p>data that is saved and used between user interactionss</p>
+<dd><p>data that is saved and used between user interactions</p>
 </dd>
-<dt><a href="#quizData">quizData</a></dt>
-<dd></dd>
+<dt><a href="#questions">questions</a></dt>
+<dd><h2 id="questions-array">Questions array </h2>
+</dd>
 </dl>
 
 <a name="data"></a>
 
-## data {object}
+## data
 
-data that is saved and used between user interactionss
-
-**Properties**
-
-| Name                      | Type                              | Description                          |
-| ---------                 | --------------------------------- | ------------------------------------ |
-|   shuffledQuestions       | number                            | the full user artwork                |
-| currentQuestionIndex      | number                            | all the lines that have been entered |
-
-<a name="quizData"></a>
-
-## questions 
-
-
-
-## questions  {array of object }
-
-data that is saved and used between user interactionss
+data that is saved and used between user interactions
 
 **Properties**
 
-| Name                      | Type                              | Description                          |
-| ---------                 | --------------------------------- | ------------------------------------ |
-|   question                | object                            | the quiz question                    |
-| answers                   | array                             | the possible answers                 |
+| Name                  | Type                | Description                                      |
+| --------------------- | ------------------- | ------------------------------------------------ |
+| @shuffledQuestion     | <code>number</code> | make sure , that the questions have random order |
+| @currentQuestionIndex | <code>number</code> | the index of the current question                |
+
+<a name="questions"></a>
+
+## questions
+
+## Questions array
+
+**Properties**
+
+| Name | Type                | Description                                                                    |
+| ---- | ------------------- | ------------------------------------------------------------------------------ |
+| each | <code>object</code> | object contains @question {string} and @answers {array} of objects {{} string} |
+
 <!-- END DOCS -->
