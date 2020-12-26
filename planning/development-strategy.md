@@ -141,7 +141,7 @@ When I click on the start button I see :
 
 ### Task B
 
-`setStatusClass.js` : 
+`setStausClass.js` : 
 
 - add class `correct` if the button selected is correct, else add class `wrong`
 
@@ -184,9 +184,7 @@ When I click on the start button I see :
 - call `showQuestion()`
 
 ### Task C
-`selectAnswer.js` :
 
-- create button for each answer 
+`setNextQuestionClick.js` :
 
-- if there is more question(s) then remove `hide` class from `next-btn`
-- if there is no more question then change the `start` button inner text to `restart`
+- add  event listenr to  `setNextQuestion.js`:
