@@ -22,13 +22,13 @@ This is a simple website in which user can check his/her JS knowledge by taking 
 
 ## User Story Dependencies
 
-![Story Dependency Diagram]()
+![Story Dependency Diagram](../img/userStories.png)
 
 ---
 
 ## WIREFRAME
 
-![wireframe]()
+[Figma](https://www.figma.com/file/elpDe0rw7VLZNDfcLSNsS1/js-quiz?node-id=0%3A1)
 
 ---
 

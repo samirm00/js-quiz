@@ -80,12 +80,30 @@ export const data = {
     ]
   },
   {
-    question: 'Th best way to learn JavaScript is?',
+    question: 'The best way to learn JavaScript is?',
     answers: [
       { text: 'books', correct: true},
       { text: 'tutorials', correct: true },
       { text: 'practising', correct: true },
       { text: 'coding', correct: true}
+    ]
+  },
+    {
+    question: 'To ask the user for input we use ?',
+    answers: [
+      { text: 'print', correct: false},
+      { text: 'log', correct: false},
+      { text: 'alert', correct: false},
+      { text: 'prompt', correct: true}
+    ]
+  },
+   {
+    question: ' What is the different between == and === ?',
+    answers: [
+      { text: '=== compare types ', correct: false},
+      { text: '==  compare types ', correct: false},
+      { text: '=== compare values and types', correct: true},
+      { text: '==  compare values ', correct: true}
     ]
   }
 ];
