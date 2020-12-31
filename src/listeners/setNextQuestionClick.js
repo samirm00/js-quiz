@@ -1,6 +1,5 @@
 'use strict';
 
-
 import {data } from '../data.js'
 import { setNextQuestion } from '../handlers/setNextQuestion.js';
 
@@ -19,4 +18,4 @@ document.getElementById('next-btn').addEventListener('click' ,() => {
 
 
 
-})
+}
