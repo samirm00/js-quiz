@@ -15,4 +15,9 @@ document.getElementById('next-btn').addEventListener('click' ,() => {
   data.questionNumber++ ;
   setNextQuestion();
 
+
 })
+
+
+
+
