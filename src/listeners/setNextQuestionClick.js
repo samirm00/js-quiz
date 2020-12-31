@@ -1,6 +1,6 @@
 'use strict';
 
-
+import { logger } from '/lib/logger.js';
 import {data } from '../data.js'
 import { setNextQuestion } from '../handlers/setNextQuestion.js';
 
@@ -12,6 +12,17 @@ import { setNextQuestion } from '../handlers/setNextQuestion.js';
 
  
 document.getElementById('next-btn').addEventListener('click' ,() => {
-  data.currentQuestionIndex++
+  const questionIndex = data.currentQuestionIndex++ ;
+  const numberOfQuestion = data.questionNumber++ ;
   setNextQuestion();
+
+
+  logger.add({
+    handler: 'setNextQuestions',
+    questionIndex,
+    numberOfQuestion,
+
+    
+  });
+
 })

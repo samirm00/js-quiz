@@ -22,7 +22,9 @@
  */
 export const data = {
   shuffledQuestions: 0,
-  currentQuestionIndex :0
+  currentQuestionIndex :0,
+  questionNumber:1,
+  questionCorrect:0
 }
 
 // here's a suggestion for your game's state, see if this works for your team
@@ -36,6 +38,7 @@ export const data = {
  export const questions = [
   {
     question: 'JS stands for ?',
+    
     answers: [
       { text: 'Java', correct: false },
       { text: 'JavaScript', correct: true },
@@ -45,6 +48,7 @@ export const data = {
   },
   {
     question: 'JavaScript was created by Brendan Eich in?',
+   
     answers: [
       { text: '1994', correct: false },
       { text: '1995', correct: true },
@@ -54,6 +58,7 @@ export const data = {
   },
   {
     question: 'What is an IIFE in JavaScript ?',
+    
     answers: [
       { text: 'normal function', correct: false },
       { text: 'Immediately Invoked Function Expression', correct: true },
@@ -63,6 +68,7 @@ export const data = {
   },
   {
     question: 'the most popular programing language in 2020 is ?',
+    
     answers: [
       { text: 'JavaScript', correct: false },
       { text: 'Python', correct: true },
@@ -72,6 +78,7 @@ export const data = {
   },
   {
     question: 'JavaScript was originally called  ?',
+   
     answers: [
       { text: 'Java', correct: false },
       { text: 'Mocha', correct: true },
@@ -80,16 +87,18 @@ export const data = {
     ]
   },
   {
-    question: 'The best way to learn JavaScript is?',
+    question: 'How can we read the properties of an object?',
+    
     answers: [
-      { text: 'books', correct: true},
-      { text: 'tutorials', correct: true },
-      { text: 'practising', correct: true },
-      { text: 'coding', correct: true}
+      { text: 'bracket', correct: false},
+      { text: 'index', correct: false },
+      { text: '==', correct: false },
+      { text: 'dot notation', correct: true}
     ]
   },
     {
     question: 'To ask the user for input we use ?',
+  
     answers: [
       { text: 'print', correct: false},
       { text: 'log', correct: false},
@@ -98,12 +107,13 @@ export const data = {
     ]
   },
    {
-    question: ' What is the different between == and === ?',
+    question: ' What is === operator in JavaScript ?',
+    
     answers: [
-      { text: '=== compare types ', correct: false},
-      { text: '==  compare types ', correct: false},
-      { text: '=== compare values and types', correct: true},
-      { text: '==  compare values ', correct: true}
+      { text: 'compare types ', correct: false},
+      { text: 'compare functions ', correct: false},
+      { text: 'compare values and types', correct: true},
+      { text: 'compare values ', correct: false}
     ]
   }
 ];

@@ -1,4 +1,4 @@
-
+import { logger } from '/lib/logger.js';
 import {setStatusClass} from '../views/setStatusClass.js'
 import { data } from '../data.js';
 
@@ -12,17 +12,37 @@ import { data } from '../data.js';
  * 4- if there is no question left then change the start button inner text to restart and show the button
  */
 
-export function selectAnswer(e){
+export function selectAnswer(e){  
+  
   const selectButton = e.target ;
   const correct = selectButton.dataset.correct ;
+  if (correct ){
+    document.getElementById('question-correct').classList.remove('hide');
+    document.getElementById('question-correct').innerText = `You got ${data.questionCorrect++} correct answer(s) from  8`;
+    
+  }
   setStatusClass(document.body, correct);
   Array.from(document.getElementById('answer-buttons').children).forEach(button =>{
     setStatusClass(button, button.dataset.correct)
   })
+  
   if(data.shuffledQuestions.length >  data.currentQuestionIndex + 1){
   document.getElementById('next-btn').classList.remove('hide');
+ 
 } else {
   document.getElementById('start-btn').innerText = 'Restart' ;
   document.getElementById('start-btn').classList.remove('hide');
+  document.getElementById('exit').innerText = 'Exit' ;
+  document.getElementById('exit').classList.remove('hide');
+  
+  
+
+  logger.add({
+    handler: 'selectAnswer',
+    correct,
+    
+ 
+  });
+  
 }
 };

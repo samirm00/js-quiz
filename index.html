@@ -13,6 +13,8 @@
     <!-- container includes the questions , answer buttons ( question-container) and the next and start buttons(controls)-->
     <div class="container">
       <h1>JavaScript Quiz</h1>
+      <p id="question-number" class="hide"> Question number </p>
+      <p id="question-correct" class="hide"> correct answers </p>
       <!--container includes the questions , answer buttons ( question-container), hidden by default -->
       <div id="question-container" class=" hide ">
         <div id="question" class="question">Question</div>
@@ -28,16 +30,20 @@
       <div class="controls">
         <button  id="start-btn" class="start-btn btn">Start</button>
         <button  id="next-btn" class="next-btn btn hide ">Next</button>
+       <a href="exit.html"><button id ="exit" class= "next-btn btn hide"></button></a>
 
       </div>
 
+       
     </div>
 
     <!-- initialize your application -->
     <script type="module" src="./src/init/index.js"></script>
     
-
     <!-- load the review buttons for your live deployment  -->
     <script type="module" src="./lib/review-buttons.js"></script>
+    
+
+   
   </body>
 </html>

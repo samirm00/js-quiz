@@ -8,12 +8,19 @@
 
 - [handlers](#handlers)
   - [startGame.js](#srchandlersstartGamejs)
+  - [showQuestion.js](#srchandlersshowQuestionjs)
+  - [setNextQuestion.js](#srchandlerssetNextQuestionjs)
+  - [selectAnswer.js](#srchandlersselectAnswerjs)
 - [init](#init)
   - [index.js](#srcinitindexjs)
 - [listeners](#listeners)
   - [startGameClick.js](#srclistenersstartGameClickjs)
+  - [setNextQuestionClick.js](#srclistenerssetNextQuestionClickjs)
 - [logic](#logic)
 - [views](#views)
+  - [clearStatusClass.js](#srcviewsclearStatusClassjs)
+  - [setStatusClass.js](#srcviewssetStatusClassjs)
+  - [resetState.js](#srcviewsresetStatejs)
 - [data.js](#srcdatajs)
 
 <!-- END TOC -->
@@ -47,6 +54,50 @@ Handler function define user interactions. They will:
 3- show the question
 call {setNextQuestion()}
 
+### [./src/handlers/showQuestion.js](./src/handlers/showQuestion.js?study)
+
+<a name="showQuestion"></a>
+
+## showQuestion()
+
+## (handler)
+
+- remove class `hide` from `question number`
+- change `question number` inner text to question number /8 .
+- create a button for each answer
+- if the answer is correct add `correct` class
+- add the answer buttons to the answer-buttons `div`
+
+
+### [./src/handlers/setNextQuestion.js](./src/handlers/setNextQuestion.js?study)
+
+<a name="setNextQuestion"></a>
+
+## setNextQuestion()
+
+## (handler)
+
+
+- call `resetState()`
+- call `showQuestion()`
+
+
+### [./src/handlers/selectAnswer.js](./src/handlers/selectAnswer.js?study)
+
+<a name="selectAnswer"></a>
+
+## selectAnswer()
+
+## (handler)
+
+
+- if the selected answer is correct remove class `hide` from `question-correct`
+- change the inner text of  `question-correct` to `you got number correct answer(s) from 8`
+- create button for each answer 
+- if there is more question(s) then remove `hide` class from `next-btn`
+- if there is no more question then change the `start` button inner text to `restart`
+- f there is no more question remove class `hide` from the `Exit` button.
+
 [TOP](#DOCS)
 
 ---
@@ -75,12 +126,19 @@ You can use the same handler in many different listeners, or add more than one l
 
 ### [./src/listeners/startGameClick.js](./src/listeners/startGameClick.js?study)
 
-<a name="startGameClick call the handler {StartGame _new } to start the quiz 
-a"></a>
+
+<a name="startGameClick call the handler {StartGame _new } to start the quiz" 
+></a>
 
 ## startGameClick call the handler {StartGame () } to start the quiz
 
-a
+
+### [./src/listeners/setNextQuestionClick.js](./src/listeners/setNextQuestionClick.js?study)
+
+<a name="setNextQuestionClick call the handler {setNextQuestion _new } to set the next question"
+></a>
+
+## setNextQuestionClick call the handsetNextQuestion () } to set the next question
 
 [TOP](#DOCS)
 
@@ -120,7 +178,35 @@ VIEW functions will _never_ ...
 - use prompt/alert/confirm
 - use data that is not passed as a parameter
 
-[TOP](#DOCS)
+
+### [./src/views/clearStatusClass.js](./src/views/clearStatusClass.js?study)
+
+<a name="clearStatusClass"></a>
+
+## clearStatusClass 
+
+- remove class `correct` from the element. 
+- remove class `wrong` from the element. 
+
+
+### [./src/views/setStatusClass.js](./src/views/setStatusClass.js?study)
+
+<a name="setStatusClass"></a>
+
+## setStatusClass 
+
+- add class `correct` if the button selected is correct, else add class `wrong`
+
+### [./src/views/resetState.js](./src/views/resetState.js?study)
+
+<a name="resetState"></a>
+
+## resetState 
+
+- add `hide` class to the `next` button
+- if there is an answer in the answer-buttons `div` remove it 
+
+TOP](#DOCS)
 
 ---
 
@@ -151,6 +237,8 @@ data that is saved and used between user interactions
 | --------------------- | ------------------- | ------------------------------------------------ |
 | @shuffledQuestion     | <code>number</code> | make sure , that the questions have random order |
 | @currentQuestionIndex | <code>number</code> | the index of the current question                |
+| @questionNumber       | <code>number</code> | the question number                              |
+| @questionCorrect      | <code>number</code> | the number of the correct question(s)            |
 
 <a name="questions"></a>
 

@@ -4,7 +4,7 @@ import {clearStatusClass} from './clearStatusClass.js'
 
 /**
  * function takes to parameters 
- * @param {DOM element } element 
+ * @param {element } element 
  * @param {class} correct 
  * 1- clear the element previous  style
  * 2- if the element is correct add correct style {green color }
