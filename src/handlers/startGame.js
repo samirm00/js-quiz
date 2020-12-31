@@ -19,7 +19,7 @@ import {setNextQuestion} from './setNextQuestion.js'
  */
 export function startGame (){
 
-    const message = `Welcome to JS quiz \n Here are the rules:\n 1- Don't select the same answer twice. \n 2- If all your answers are wrong , you will not get a feedback back about how many question(s) you answered.\n 3- If you answer is correct, you will see green color.\n 4- if you answer is wrong, you will see red color.` ;
+    const message = `Welcome to JS quiz \n Here are the rules:\n 1- Don't select the same answer twice. \n 2- If all your answers are wrong , you will not get a feedback about how many question(s) you answered.\n 3- If your answer is correct, you will see green color.\n 4- if your answer is wrong, you will see red color.` ;
     alert(message);
     document.getElementById('start-btn').classList.add('hide') ;
     document.getElementById('exit').classList.add('hide');
