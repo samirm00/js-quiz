@@ -1,3 +1,4 @@
+'use strict';
 
 import {resetState} from '../views/resetState.js'
 import {showQuestion} from './showQuestion.js'

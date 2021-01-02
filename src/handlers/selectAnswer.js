@@ -1,4 +1,6 @@
+'use strict';
 
+import { logger } from '/lib/logger.js';
 import {setStatusClass} from '../views/setStatusClass.js'
 import { data } from '../data.js';
 
@@ -34,10 +36,16 @@ export function selectAnswer(e){
   document.getElementById('start-btn').classList.remove('hide');
   document.getElementById('exit').innerText = 'Exit' ;
   document.getElementById('exit').classList.remove('hide');
-  
+    
+}
+
+
+logger.add({
+  handler: 'selectAnswer',
+  correct,
   
 
-  
-  
-}
+});
+
+
 };
