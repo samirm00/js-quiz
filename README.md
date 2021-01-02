@@ -99,7 +99,7 @@ Project is: _in progress_
 from `WebDevSimplified`
 
 ## Contact
-Refracted  by [@Group2] 
+By [@Group2] 
 
 question
 
