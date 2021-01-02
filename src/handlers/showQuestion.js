@@ -1,6 +1,6 @@
 'use strict';
 
-import { logger } from '/lib/logger.js';
+
 import {selectAnswer} from './selectAnswer.js'
 import { data } from '../data.js';
 
@@ -18,11 +18,11 @@ import { data } from '../data.js';
 export function showQuestion (question) {
   document.getElementById('question-number').classList.remove('hide');
   
-  const numberOfQuestion = data.questionNumber ;
+  
   document.getElementById('question-number').innerText = `${data.questionNumber} / 8`;
-  const theQuestion = question.question ;
+  
   document.getElementById('question').innerText = question.question;
-  const allAnswer = question.answers ;
+  
   question.answers.forEach( answer => {
     const button = document.createElement('button');
     button.innerText = answer.text ;
@@ -36,14 +36,6 @@ export function showQuestion (question) {
   document.getElementById('answer-buttons').appendChild(button) ;
   })
 
-  logger.add({
-    handler: 'showQuestion',
-    numberOfQuestion,
-    theQuestion,
-    allAnswer ,
-    
  
-  });
-
 };
 

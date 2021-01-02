@@ -1,6 +1,6 @@
 'use strict';
 
-import { logger } from '/lib/logger.js';
+
 import {setStatusClass} from '../views/setStatusClass.js'
 import { data } from '../data.js';
 
@@ -39,13 +39,6 @@ export function selectAnswer(e){
     
 }
 
-
-logger.add({
-  handler: 'selectAnswer',
-  correct,
-  
-
-});
 
 
 };

@@ -1,8 +1,5 @@
 'use strict';
 
-
-import { logger } from '/lib/logger.js';
-
 import { data , questions} from '../data.js';
 
 import {setNextQuestion} from './setNextQuestion.js'
@@ -27,21 +24,13 @@ export function startGame (){
     document.getElementById('question-correct').classList.add('hide');
     data.shuffledQuestions = questions.sort(() => Math.random() - .5) ; 
 
-    const initialQuestionIndex = data.currentQuestionIndex ;
-    const initialNumberOfQuestion = data.questionNumber ;
-    const initialCorrectQuestion = data.questionCorrect ;
+    data.currentQuestionIndex = 0 ;
+    data.questionNumber = 1 ;
+    data.questionCorrect = 1 ;
     document.getElementById('question-container').classList.remove('hide');
     setNextQuestion();
   
-    logger.add({
-        handler: 'startGame',
-        initialQuestionIndex,
-        initialNumberOfQuestion,
-        initialCorrectQuestion,
-     
-      });
-
-   
+    
 
 
 };
