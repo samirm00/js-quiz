@@ -17,11 +17,11 @@ import { data } from '../data.js';
 export function selectAnswer(e){  
   
   const selectButton = e.target ;
-  const correct = selectButton.dataset.correct ;
+  let  correct = selectButton.dataset.correct ;
   if (correct ){
     document.getElementById('question-correct').classList.remove('hide');
     document.getElementById('question-correct').innerText = `You got ${data.questionCorrect++} correct answer(s) from  8`;
-    
+        
   }
   setStatusClass(document.body, correct);
   Array.from(document.getElementById('answer-buttons').children).forEach(button =>{
@@ -32,8 +32,7 @@ export function selectAnswer(e){
   document.getElementById('next-btn').classList.remove('hide');
  
 } else {
-  document.getElementById('start-btn').innerText = 'Restart' ;
-  document.getElementById('start-btn').classList.remove('hide');
+  
   document.getElementById('exit').innerText = 'Exit' ;
   document.getElementById('exit').classList.remove('hide');
     
