@@ -7,20 +7,20 @@
 <!-- BEGIN TOC -->
 
 - [handlers](#handlers)
-  - [startGame.js](#srchandlersstartGamejs)
-  - [showQuestion.js](#srchandlersshowQuestionjs)
-  - [setNextQuestion.js](#srchandlerssetNextQuestionjs)
   - [selectAnswer.js](#srchandlersselectAnswerjs)
+  - [setNextQuestion.js](#srchandlerssetNextQuestionjs)
+  - [showQuestion.js](#srchandlersshowQuestionjs)
+  - [startGame.js](#srchandlersstartGamejs)
 - [init](#init)
   - [index.js](#srcinitindexjs)
 - [listeners](#listeners)
-  - [startGameClick.js](#srclistenersstartGameClickjs)
   - [setNextQuestionClick.js](#srclistenerssetNextQuestionClickjs)
+  - [startGameClick.js](#srclistenersstartGameClickjs)
 - [logic](#logic)
 - [views](#views)
   - [clearStatusClass.js](#srcviewsclearStatusClassjs)
-  - [setStatusClass.js](#srcviewssetStatusClassjs)
   - [resetState.js](#srcviewsresetStatejs)
+  - [setStatusClass.js](#srcviewssetStatusClassjs)
 - [data.js](#srcdatajs)
 
 <!-- END TOC -->
@@ -41,6 +41,44 @@ Handler function define user interactions. They will:
 
 ---
 
+### [./src/handlers/selectAnswer.js](./src/handlers/selectAnswer.js?study)
+
+<a name="selectAnswer"></a>
+
+## selectAnswer(1-)
+
+function has one parameter if the clicked answer button is correct then add correct class {green color} to the body and to the selected button
+
+| Param | Type               | Description                                                                                                                                                                                                                                                                                                                                                                         |
+| ----- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1-    | <code>event</code> | if the clicked button is correct then add correct class to the body 2- if the clicked button is correct then add correct class to the button clicked 3- if the question numbers are more than the question index + 1 (we still have question left) then show the next button 4- if there is no question left then change the start button inner text to restart and show the button |
+
+---
+
+### [./src/handlers/setNextQuestion.js](./src/handlers/setNextQuestion.js?study)
+
+<a name="setNextQuestion"></a>
+
+## setNextQuestion()
+
+Higher order function call two function one handler {showQuestion()} and one view function {resetState()}
+
+---
+
+### [./src/handlers/showQuestion.js](./src/handlers/showQuestion.js?study)
+
+<a name="showQuestion"></a>
+
+## showQuestion({array)
+
+function with one parameter creates a button for each question text and if the answer is correct add correct class {green color}
+
+| Param  | Type                  | Description                                                                                                                                                                                                                                                                                                                                                                  |
+| ------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| {array | <code>question</code> | of objects} 1- select each question text from the object 2- for each question answer create a button and add the answer text to button inner text 3- add class 'btn' for each button 4- if the answer click is correct then add correct class to that button {green color} 5- add event listener to {selectAnswer ()} and append the buttons created to answer-buttons 'DIV' |
+
+---
+
 ### [./src/handlers/startGame.js](./src/handlers/startGame.js?study)
 
 <a name="startGame"></a>
@@ -53,50 +91,6 @@ Handler function define user interactions. They will:
 2- shuffle the question so they appear in a different order
 3- show the question
 call {setNextQuestion()}
-
-### [./src/handlers/showQuestion.js](./src/handlers/showQuestion.js?study)
-
-<a name="showQuestion"></a>
-
-## showQuestion()
-
-## (handler)
-
-- remove class `hide` from `question number`
-- change `question number` inner text to question number /8 .
-- create a button for each answer
-- if the answer is correct add `correct` class
-- add the answer buttons to the answer-buttons `div`
-
-
-### [./src/handlers/setNextQuestion.js](./src/handlers/setNextQuestion.js?study)
-
-<a name="setNextQuestion"></a>
-
-## setNextQuestion()
-
-## (handler)
-
-
-- call `resetState()`
-- call `showQuestion()`
-
-
-### [./src/handlers/selectAnswer.js](./src/handlers/selectAnswer.js?study)
-
-<a name="selectAnswer"></a>
-
-## selectAnswer()
-
-## (handler)
-
-
-- if the selected answer is correct remove class `hide` from `question-correct`
-- change the inner text of  `question-correct` to `you got number correct answer(s) from 8`
-- create button for each answer 
-- if there is more question(s) then remove `hide` class from `next-btn`
-- if there is no more question then change the `start` button inner text to `restart`
-- f there is no more question remove class `hide` from the `Exit` button.
 
 [TOP](#DOCS)
 
@@ -124,21 +118,22 @@ You can use the same handler in many different listeners, or add more than one l
 
 ---
 
+### [./src/listeners/setNextQuestionClick.js](./src/listeners/setNextQuestionClick.js?study)
+
+<a name="setNextQuestionClick call the handler {setNextQuestion_new} to prepare the next question"></a>
+
+## setNextQuestionClick call the handler {setNextQuestion()} to prepare the next question
+
+---
+
 ### [./src/listeners/startGameClick.js](./src/listeners/startGameClick.js?study)
 
-
-<a name="startGameClick call the handler {StartGame _new } to start the quiz" 
-></a>
+<a name="startGameClick call the handler {StartGame _new } to start the quiz 
+a"></a>
 
 ## startGameClick call the handler {StartGame () } to start the quiz
 
-
-### [./src/listeners/setNextQuestionClick.js](./src/listeners/setNextQuestionClick.js?study)
-
-<a name="setNextQuestionClick call the handler {setNextQuestion _new } to set the next question"
-></a>
-
-## setNextQuestionClick call the handsetNextQuestion () } to set the next question
+a
 
 [TOP](#DOCS)
 
@@ -178,35 +173,48 @@ VIEW functions will _never_ ...
 - use prompt/alert/confirm
 - use data that is not passed as a parameter
 
+---
 
 ### [./src/views/clearStatusClass.js](./src/views/clearStatusClass.js?study)
 
 <a name="clearStatusClass"></a>
 
-## clearStatusClass 
+## clearStatusClass(remove)
 
-- remove class `correct` from the element. 
-- remove class `wrong` from the element. 
+| Param  | Type                 | Description                                                                                                                                                                                    |
+| ------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| remove | <code>element</code> | correct and wrong classes styles ---------------------------------------------------------- function use to remove the class style correct {green color} and wrong {red color} from an element |
 
-
-### [./src/views/setStatusClass.js](./src/views/setStatusClass.js?study)
-
-<a name="setStatusClass"></a>
-
-## setStatusClass 
-
-- add class `correct` if the button selected is correct, else add class `wrong`
+---
 
 ### [./src/views/resetState.js](./src/views/resetState.js?study)
 
 <a name="resetState"></a>
 
-## resetState 
+## resetState()
 
-- add `hide` class to the `next` button
-- if there is an answer in the answer-buttons `div` remove it 
+## function use to remove the original answers created in HTML
 
-TOP](#DOCS)
+1- remove the body style
+2- hide the next button
+3- if there is any child in the answer remove it.( clear the answer)
+
+---
+
+### [./src/views/setStatusClass.js](./src/views/setStatusClass.js?study)
+
+<a name="setStatusClass"></a>
+
+## setStatusClass(element, correct)
+
+function takes to parameters
+
+| Param   | Type                 | Description                                                                                                                                              |
+| ------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| element | <code>element</code> |                                                                                                                                                          |
+| correct | <code>class</code>   | 1- clear the element previous style 2- if the element is correct add correct style {green color } 3- if the element is wrong add wrong style {red color} |
+
+[TOP](#DOCS)
 
 ---
 
@@ -237,8 +245,6 @@ data that is saved and used between user interactions
 | --------------------- | ------------------- | ------------------------------------------------ |
 | @shuffledQuestion     | <code>number</code> | make sure , that the questions have random order |
 | @currentQuestionIndex | <code>number</code> | the index of the current question                |
-| @questionNumber       | <code>number</code> | the question number                              |
-| @questionCorrect      | <code>number</code> | the number of the correct question(s)            |
 
 <a name="questions"></a>
 
@@ -250,6 +256,6 @@ data that is saved and used between user interactions
 
 | Name | Type                | Description                                                                    |
 | ---- | ------------------- | ------------------------------------------------------------------------------ |
-| each | <code>object</code> | object contains @question {string} and @answers {array} of objects (string)    |
+| each | <code>object</code> | object contains @question {string} and @answers {array} of objects {{} string} |
 
 <!-- END DOCS -->
